@@ -1,6 +1,6 @@
 function K = kffrbfKernCompute(lfmKern1, t1, t2)
 
-% LFMXLFMKERNCOMPUTE Compute a cross kernel between two KFF LFM kernels.
+% LFMXLFMKERNCOMPUTE Compute a cross kernel between two KFF RBF kernels.
 % FORMAT
 % DESC computes cross kernel terms between two LFM kernels for
 % the multiple output kernel.

@@ -101,7 +101,7 @@ dvd_dw = bsxfun(@rdivide, temp, den);
 temp = bsxfun(@plus,(t1.*esin)*(alpha(1)+1j*lambda_s),omega(1)*(t1.*ecos)-esin);
 temp = temp - bsxfun(@times,vd,2*wm*(alpha(1)+1j*lambda_s));
 dvd_da = bsxfun(@rdivide, temp, den);
-
+% 
 %% wrt t2
 elamt = exp(-1j*t2*lambda_s); %NxS
 temp = exp(-alpha(2)*t2);

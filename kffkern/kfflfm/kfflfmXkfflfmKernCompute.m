@@ -52,6 +52,7 @@ omega(1) = sqrt(lfmKern1.spring./lfmKern1.mass - alpha(1)*alpha(1));
 omega(2) = sqrt(lfmKern2.spring./lfmKern2.mass - alpha(2)*alpha(2));
 
 % Sample the frequencies for the Monte Carlo integration
+
 % S = lfmKern1.S; 
 % lambda_s = sqrt(2/lengthscale2)*randn(S, 1);
 % Klambda = zeros(length(t1), length(t2));
@@ -74,9 +75,12 @@ omega(2) = sqrt(lfmKern2.spring./lfmKern2.mass - alpha(2)*alpha(2));
 % sK = (exp(-alpha(1)*t1)*(exp(-alpha(2)*t2)).').*Klambda;
 % K0 = (lfmKern1.sensitivity*lfmKern2.sensitivity)/(lfmKern1.mass*lfmKern2.mass*prod(omega));
 % K = K0*sK;
+
 % using complex numbers
-S = lfmKern1.S; 
-Z = lfmKern1.Z;
+S = lfmKern1.S;  % Number of samples in the frequence space of random Fourier
+Z = lfmKern1.Z;   % The normalised frequences of random Fourier. It is 
+                    %an matrix with shape S x 1, entris are 
+                    %normally distributed random numbers by kern.Z = randn(kern.S, 1)
 %Z = randn(S, 1);
 lambda_s = sqrt(2/lengthscale2)*Z;
 C = computeC(alpha(1), omega(1), lambda_s);
